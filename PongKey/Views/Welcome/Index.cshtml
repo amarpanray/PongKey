@@ -2,72 +2,113 @@
 @{
     ViewBag.Title = "Index";
  }
-<div id="Main" style="padding: 25px">
-    <div>
-        <strong>Some Title Goes here</strong>
+<h2>
+    Welcome ...
+</h2>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div id="Main" class="Main">
+            <div>
+                <strong> Add event</strong>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tbody>
+                        @using (Html.BeginForm("Index", "Welcome", FormMethod.Post))
+                        {
+                            <tr>
+                                <td style="text-align: left; ">
+                                    @Html.TextBoxFor(m => m.Name, new { style = "width: 100%" })
+                                </td>
+                                <td style="text-align: center;width: 15%">
+                                    <button id="Add" style="width:100%">Add</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <strong>Events (Total: 5)</strong>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th width="5%">
+                                #
+                            </th>
+                            <th>
+                                What?
+                            </th>
+                            <th width="15%">
+                                When?
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                <a href="../Detail/Index/1">Trip to Europe</a>
+                            </td>
+                            <td>
+                                10-AUG-2017
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                <a href="../Detail/Index/2">Birthday Celebration</a>
+                            </td>
+                            <td>
+                                02-NOV-2017
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                <a href="../Detail/Index/3">Move to Mauritius</a>
+                            </td>
+                            <td>
+                                02-SEP-2018
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                <a href="../Detail/Index/4">Register Company</a>
+                            </td>
+                            <td>
+                                14-JUL-2018
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                5
+                            </td>
+                            <td>
+                                <a href="../Detail/Index/5">Deploy Safe Share</a>
+                            </td>
+                            <td>
+                                02-OCT-2018
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="table-responsive">
-        <table class="table table-bordered">
-            <tbody>
-                @using (Html.BeginForm("Index", "Welcome", FormMethod.Post))
-                {
-                    <tr>
-                        <td style="text-align: left; width:90%">
-                            @Html.TextBoxFor(m => m.Name, new { style = "width: 100%" })
-                        </td>
-                        <td style="text-align: right; width:10%">
-                            <button id="Add">Add</button>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-
-        </table>
-    </div>
-    <div>
-        <strong>Some Title Goes here</strong>
-    </div>
-    <div class="table-responsive">
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th>
-                        #
-                    </th>
-                    <th>
-                        Event
-                    </th>
-                    <th>
-                        Priority
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        1
-                    </td>
-                    <td>
-                       <a href="../Detail/Index/1">My Event</a> 
-                    </td>
-                    <td>
-                        1
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        <a href="../Detail/Index/2">My Event 2</a> 
-                    </td>
-                    <td>
-                        1
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <div class="col-md-1"></div>
 </div>
-   
 
+ 
