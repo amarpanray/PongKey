@@ -2,9 +2,9 @@
 @{
     ViewBag.Title = "Index";
  }
-<h2>
+<h4>
     Welcome ...
-</h2>
+</h4>
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
@@ -49,11 +49,11 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
+                            <td> 
                                 1
                             </td>
                             <td>
-                                <a href="../Detail/Index/1">Trip to Europe</a>
+                                @Html.ActionLink("Trip to Europe", "Index", "Detail", new { Id = "1" }, null)                                
                             </td>
                             <td>
                                 10-AUG-2017
@@ -64,7 +64,7 @@
                                 2
                             </td>
                             <td>
-                                <a href="../Detail/Index/2">Birthday Celebration</a>
+                                @Html.ActionLink("Birthday Celebration", "Index", "Detail", new { Id = "2" }, null)                                
                             </td>
                             <td>
                                 02-NOV-2017
@@ -75,7 +75,7 @@
                                 3
                             </td>
                             <td>
-                                <a href="../Detail/Index/3">Move to Mauritius</a>
+                                @Html.ActionLink("Move to Mauritius" ,"Index", "Detail", new { Id = "3" }, null)  
                             </td>
                             <td>
                                 02-SEP-2018
@@ -86,7 +86,7 @@
                                 4
                             </td>
                             <td>
-                                <a href="../Detail/Index/4">Register Company</a>
+                                @Html.ActionLink("Register Company", "Index", "Detail", new { Id = "4" }, null)                                
                             </td>
                             <td>
                                 14-JUL-2018
@@ -97,7 +97,7 @@
                                 5
                             </td>
                             <td>
-                                <a href="../Detail/Index/5">Deploy Safe Share</a>
+                                @Html.ActionLink("Deploy Safe Share", "Index", "Detail", new { Id = "5" }, null)
                             </td>
                             <td>
                                 02-OCT-2018

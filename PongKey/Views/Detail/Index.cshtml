@@ -2,15 +2,15 @@
 @{
     ViewBag.Title = "Index";
 }
-<h2>
-    Event name goes here ...
-</h2>
+<h4>
+    My Event name
+</h4>
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <div id="Main" class="Main">
             <div>
-                <strong> Edit event</strong>
+                <strong> Event info</strong>
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered">
@@ -19,44 +19,102 @@
                         { 
                         <tr>
                             <td style="text-align: right; vertical-align:top; width: 15% ">
-                                Event:
+                                Event: 
                             </td>
                             <td >
-                                @*@Html.TextBoxFor(m => m.Name, new { style = "width: 100%" })*@
+                                @Html.TextBoxFor(m => m.Name, new { style = "width: 100%" })
                             </td>
                             
                         </tr>
                         
                         <tr>
                             <td style="text-align: right; vertical-align:top; width: 15% ">
-                                Description:
+                                 Description: 
                             </td>
                             <td>
-
+                                @Html.TextAreaFor(m => m.Description, new { style = "width: 100%", maxlength = 500})
                             </td>
                         </tr>
 
                         <tr>
                             <td style="text-align: right; vertical-align:top; width: 15% ">
-                                Date:
+                                Date:  
                             </td>
                             <td>
-
+                                @Html.TextBoxFor(m => m.Date, new { style = "width: 20%" })
                             </td>
                         </tr>
                         <tr>
                             <td style="text-align: right; vertical-align:top; width: 15% ">
-                                Location:
+                               Location: 
                             </td>
-                            <td></td>
+                            <td>
+                                @Html.TextBoxFor(m => m.Location, new { style = "width: 100%"})
+                            </td>
                         </tr>
                         <tr>                            
                             <td style="text-align: right;" colspan="2">
-                                <button id="Cancel"><< Back</button>
+                                <button id="Back"><< Back</button>
+                                @*//if admin*@
+                                <button id="Cancel">Cancel this event</button>
                                 <button id="Add" type="submit">Update</button>
+                                @*//end if*@
                             </td>
                         </tr>
                         } 
+                    </tbody>
+                </table>
+
+                <div>
+                    <strong>
+                        Discussion Board
+                    </strong>
+                </div>
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: left; vertical-align:top; ">
+                              Replies   
+                            </td>
+                            <td style="text-align: left; vertical-align:top; width: 30% ">
+                              Guests
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.TextBoxFor(m => m.Post, new { style = "width: 92%"}) <button>Post</button>
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.Guest, new { style = "width: 79%" }) <button>Invite</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul class="Post">
+                                    <li> 
+                                        I agree with this and wish to contribute 
+                                        <ul class="Reply">
+                                            <li>Sure, I willl provide a link</li>
+                                            <li>Thanks Jilliane!</li>
+                                        </ul>
+                                    </li>
+                                    <li> 
+                                        Where is the location? Can someone make me admin? 
+                                        <ul class="Reply">
+                                            <li> Done! </li>
+                                            <li> Excellent! I appreciate it!!</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li> amarpanray@hotmail.com </li>
+                                    <li> John Smith</li>
+                                    <li> Billy Bob </li>
+                                </ul>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -65,9 +123,9 @@
     </div>
 </div>
 <script>
-    $("#Cancel").click(
-        function () {
-         //   alert();
-            location.href = '/Welcome/Index';
+    $("#Back").click(
+        function () 
+        {         
+           window.location.href = '@Url.Action("Index", "Welcome")';
         });
 </script>
